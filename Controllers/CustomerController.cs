@@ -250,28 +250,5 @@ namespace Migration_Project.Controllers
             }
         }
 
-        /// <summary>
-        /// Handles page index changes for pagination
-        /// </summary>
-        /// <param name="newIndex">The new page index</param>
-        /// <returns>Confirmation of page index change</returns>
-        /// <response code="200">Page index was successfully changed</response>
-        /// <response code="500">If there was an internal server error</response>
-        [HttpPost("pageIndexChange")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult PageIndexChange(int newIndex)
-        {
-            try
-            {
-                // Logic to handle page index change, if needed
-                return Ok(new { message = "Page index changed", index = newIndex });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    new { message = "Error changing page index", error = ex.Message });
-            }
-        }
     }
 }
